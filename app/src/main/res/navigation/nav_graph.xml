@@ -1,0 +1,18 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/clockFragment">
+
+    <fragment
+        android:id="@+id/clockFragment"
+        android:name="com.example.worldclock.ClockFragment"
+        android:label="World Clock">
+        <action
+            android:id="@+id/action_clockFragment_to_addCityFragment"
+            app:destination="@id/addCityFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addCityFragment"
+        android:name="com.example.worldclock.AddCityFragment"
+        android:label="Add City" />
+</navigation>
