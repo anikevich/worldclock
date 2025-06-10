@@ -17,6 +17,7 @@ import java.util.TimeZone
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Date
+import com.example.worldclock.CustomAnalogClock
 
 class AddCityFragment : Fragment() {
     private lateinit var binding: FragmentAddCityBinding
@@ -48,11 +49,9 @@ class AddCityFragment : Fragment() {
             "Moskow" to "Europe/Moscow",
             "Astana" to "Asia/Almaty",
             "Saint-Petersburg" to "Europe/Moscow",
-            //"Seattle" to "GMT-7",
             "Seattle" to "America/Los_Angeles",
             "Salt Lake City" to "GMT-6",
-            //"Issaquah" to "UTC-7:00"
-            "Issaquah" to "GMT-7:00"
+            "Issaquah" to "GMT-07:00"
         )
 
         // Подготовка списка городов

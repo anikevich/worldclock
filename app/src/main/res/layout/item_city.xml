@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -26,4 +28,58 @@
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@android:drawable/ic_delete" />
+</LinearLayout>
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:gravity="center_vertical">
+
+    <!-- Аналоговые часы -->
+
+    <!--
+    <AnalogClock
+        android:id="@+id/analogClock"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="16dp"/>
+    -->
+
+    <com.example.worldclock.CustomAnalogClock
+        android:id="@+id/analogClock"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        tools:ignore="MissingClass" />
+
+    <!-- Название города и время -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvCityName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <!-- Кнопка удаления -->
+    <ImageButton
+        android:id="@+id/btnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_delete"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 </LinearLayout>

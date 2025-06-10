@@ -1,6 +1,7 @@
 package com.example.worldclock
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +15,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.util.Timer
 import java.util.TimerTask
+import com.example.worldclock.CustomAnalogClock
 
 class ClockFragment : Fragment() {
     private lateinit var binding: FragmentClockBinding
@@ -44,18 +46,21 @@ class ClockFragment : Fragment() {
             findNavController().navigate(R.id.action_clockFragment_to_addCityFragment)
         }
 
-        // Обновление времени каждую секунду
+        // Обновление времени каждую минуту 60000 (секунду 1000)
+
         val timer = Timer()
         timer.schedule(object : TimerTask() {
             override fun run() {
                 activity?.runOnUiThread {
+                    Log.d("Mylog", "timer run")
                     adapter.notifyDataSetChanged()
                 }
             }
-        }, 0, 1000)
+        }, 0, 60000) //1000//60000
 
         loadCities()
     }
+
 
     private fun loadCities() {
         lifecycleScope.launch {
