@@ -42,11 +42,12 @@ class ClockFragment : Fragment() {
         }
         binding.recyclerView.adapter = adapter
 
-        //_***************
-        //val layoutManager = GridLayoutManager(requireContext(), 2) // 3 - количество столбцов
-        //binding.recyclerView.layoutManager = layoutManager //
+        //_Need for GridLayoutManager
+        val layoutManager = GridLayoutManager(requireContext(), 2) // 3 - количество столбцов
+        binding.recyclerView.layoutManager = layoutManager //
 
-        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        // Need for LinearLayoutManager
+        //binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
 
         // Кнопка добавления города

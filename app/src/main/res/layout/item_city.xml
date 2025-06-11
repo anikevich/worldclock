@@ -31,10 +31,10 @@
 </LinearLayout>
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:padding="16dp"
     android:gravity="center_vertical">
 
@@ -56,36 +56,33 @@
 
     <com.example.worldclock.CustomAnalogClock
         android:id="@+id/analogClock"
-        android:layout_width="128dp"
-        android:layout_height="128dp"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         tools:ignore="MissingClass" />
 
     <!-- Название города и время -->
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tvCityName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"/>
+    <TextView
+        android:id="@+id/tvCityName"
+        android:layout_width="140dp"
+        android:layout_height="20dp"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/tvTime"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"/>
-    </LinearLayout>
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="140dp"
+        android:layout_height="16dp"
+        android:textAlignment="center"
+        android:textSize="14sp" />
 
-    <!-- Кнопка удаления -->
     <ImageButton
         android:id="@+id/btnDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="54dp"
         android:background="?attr/selectableItemBackgroundBorderless"
-        android:src="@android:drawable/ic_delete"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 </LinearLayout>
