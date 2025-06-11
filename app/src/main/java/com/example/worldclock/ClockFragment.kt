@@ -1,5 +1,6 @@
 package com.example.worldclock
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager //_
 import com.example.worldclock.databinding.FragmentClockBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -39,7 +41,13 @@ class ClockFragment : Fragment() {
             }
         }
         binding.recyclerView.adapter = adapter
+
+        //_***************
+        //val layoutManager = GridLayoutManager(requireContext(), 2) // 3 - количество столбцов
+        //binding.recyclerView.layoutManager = layoutManager //
+
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
 
         // Кнопка добавления города
         binding.fabAdd.setOnClickListener {
@@ -52,11 +60,10 @@ class ClockFragment : Fragment() {
         timer.schedule(object : TimerTask() {
             override fun run() {
                 activity?.runOnUiThread {
-                    Log.d("Mylog", "timer run")
                     adapter.notifyDataSetChanged()
                 }
             }
-        }, 0, 60000) //1000//60000
+        }, 0, 60000) //1000
 
         loadCities()
     }

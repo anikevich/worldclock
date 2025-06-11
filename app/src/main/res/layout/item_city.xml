@@ -41,6 +41,12 @@
     <!-- Аналоговые часы -->
 
     <!--
+    <com.example.worldclock.CustomAnalogClock
+        android:id="@+id/analogClock"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="16dp"/>
+
     <AnalogClock
         android:id="@+id/analogClock"
         android:layout_width="64dp"
